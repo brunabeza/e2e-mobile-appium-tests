@@ -1,15 +1,19 @@
-import { browser } from '@wdio/globals'
+import type { ChainablePromiseElement } from 'webdriverio'
 
-/**
-* main page object containing all methods, selectors and functionality
-* that is shared across all page objects
-*/
 export default class Page {
-    /**
-    * Opens a sub page of the page
-    * @param path path of the sub page (e.g. /path/to/page.html)
-    */
-    public open (path: string) {
-        return browser.url(`https://the-internet.herokuapp.com/${path}`)
+    async waitForElementToBeVisible(selector: ChainablePromiseElement) {
+        await selector.waitForDisplayed({ timeout: 10000 })
+    }
+
+    async tapBackButton() {
+        await browser.back()
+    }
+
+    async pause(seconds: number) {
+        await browser.pause(seconds * 1000)
+    }
+
+    async isElementDisplayed(selector: ChainablePromiseElement): Promise<boolean> {
+        return selector.isDisplayed()
     }
 }

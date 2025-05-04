@@ -8,7 +8,7 @@ export const config: WebdriverIO.Config = {
         'appium:deviceName': 'emulator-5554',
         'appium:platformVersion': '14',
         'appium:automationName': 'UiAutomator2',
-        'appium:app': './apps/ApiDemos-debug.apk',
+        'appium:app': './apps/alura_esporte.apk',
         'appium:autoGrantPermissions': true
     }],
 
