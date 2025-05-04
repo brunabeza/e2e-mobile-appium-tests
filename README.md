@@ -24,8 +24,7 @@ Este projeto automatiza testes E2E em um app mobile Android utilizando **Webdriv
 │   └── specs/             # Casos de teste
 ├── pageobjects/           # Page Objects reutilizáveis
 │   ├── login.page.ts
-│   ├── register.page.ts
-│   └── compra.page.ts
+│   └── checkout.page.ts
 ├── wdio.conf.ts           # Configuração do WebdriverIO
 ├── allure-results/        # Gerado automaticamente após execução
 └── allure-report/         # Relatório HTML gerado
