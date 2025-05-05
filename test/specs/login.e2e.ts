@@ -9,6 +9,6 @@ describe('Register and Login Test', () => {
         await RegisterPage.register(users.validUser.username, users.validUser.password, users.validUser.password)
         await LoginPage.login(users.validUser.username, users.validUser.password)
 
-        await expect(LoginPage.itenSailing).toBeDisplayed()
+        await expect(LoginPage.itemSailing).toBeDisplayed()
     })
 })

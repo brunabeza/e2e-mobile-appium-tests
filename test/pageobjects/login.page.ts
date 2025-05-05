@@ -18,7 +18,7 @@ class LoginPage extends Page {
         return $('android=new UiSelector().resourceId("br.com.alura.aluraesporte:id/login_botao_logar")')
     }
 
-    public get itenSailing () {
+    public get itemSailing () {
         return $('android=new UiSelector().resourceId("br.com.alura.aluraesporte:id/item_produto_nome")')
     }
 
@@ -32,7 +32,7 @@ class LoginPage extends Page {
         await this.waitForElementToBeVisible(this.btnSubmit)
         await this.btnSubmit.click()
         
-        await this.waitForElementToBeVisible(this.itenSailing)
+        await this.waitForElementToBeVisible(this.itemSailing)
     }
 }
 
