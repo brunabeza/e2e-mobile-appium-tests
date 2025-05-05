@@ -62,7 +62,7 @@ npm run report
 
 > Certifique-se que a pasta `allure-results` foi criada durante a execução dos testes.
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/f04db81a-9174-44e0-ade2-486d4add7fcb)
 
 ---
 
