@@ -1,4 +1,4 @@
-name: Run Mobile E2E Tests
+name: Run Mobile E2E Tests with BrowserStack
 
 on:
   pull_request:
@@ -14,35 +14,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Docker
-        run: |
-          docker pull android/emulator:latest
-          docker run -d --name android-emulator android/emulator:latest
-
-      - name: Start Android Emulator
-        run: |
-          docker exec -d android-emulator /bin/bash -c "emulator -avd Pixel_3a_API_29 -no-window -gpu off -qemu -m 2048"
-          # Aguarda o emulador ser inicializado
-          sleep 60  # Ajuste o tempo de espera conforme necessário
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Appium
-        run: npm install -g appium
+      - name: Start BrowserStack Local
+        run: npx browserstack-local --key ${{ secrets.BROWSERSTACK_ACCESS_KEY }} &
 
-      - name: Install UiAutomator2 driver
-        run: appium driver install uiautomator2
-
-      - name: Start Appium server
-        run: appium --log appium.log &
-
-      - name: Run Mobile E2E tests
+      - name: Run Mobile E2E tests on BrowserStack
         run: npm run wdio-ci
 
       - name: Generate Allure report
         run: npm run report
-          
+
       - name: Upload test report
         uses: actions/upload-artifact@v4
         with:
