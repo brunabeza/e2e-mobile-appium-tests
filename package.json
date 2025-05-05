@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run wdio",
-    "wdio": "wdio run wdio.config.ts",
+    "wdio": "npx wdio run wdio.config.ts",
     "report": "allure generate allure-results --clean && allure open"
   },
   "keywords": [],
