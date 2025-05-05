@@ -32,7 +32,7 @@ jobs:
         run: appium --log appium.log &
 
       - name: Run Mobile E2E tests
-        run: npm run test
+        run: npm run wdio-ci
 
       - name: Generate Allure report
         run: npm run report
