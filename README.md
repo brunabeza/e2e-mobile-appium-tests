@@ -95,8 +95,4 @@ Adicione ao seu `package.json`:
 - Appium (`npm install -g appium`)
 - Allure CLI (`npm install -g allure-commandline`)
 
----
 
-## 📞 Suporte
-
-Para dúvidas ou melhorias, entre em contato ou abra uma issue.
